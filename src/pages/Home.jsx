@@ -1,5 +1,7 @@
 import React from 'react';
 import { ArrowRight, Hexagon, Users, Phone, MessageSquare, Github } from 'lucide-react';
+import { Link } from "react-router-dom";
+
 
 const LandingPage = () => {
   return (
@@ -14,8 +16,9 @@ const LandingPage = () => {
           <div className="hidden md:flex items-center space-x-8">
             <a href="#features" className="text-gray-600 hover:text-yellow-600">Features</a>
             <a href="#how-it-works" className="text-gray-600 hover:text-yellow-600">How it works</a>
-            <a href="#" className="text-gray-600 hover:text-yellow-600">About</a>
-            <button className="bg-yellow-600 text-gray-600 px-6 py-2 rounded-full hover:bg-yellow-700 transition">
+            {/* <a href="#" className="text-gray-600 hover:text-yellow-600">About</a> */}
+            <Link to="/about" className="text-gray-600 hover:text-yellow-600">About</Link>
+            <button className="bg-yellow-600 text-white px-6 py-2 rounded-full hover:bg-yellow-700 transition">
               Sign Up
             </button>
           </div>
@@ -33,7 +36,7 @@ const LandingPage = () => {
           on projects that make an impact.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <button className="bg-yellow-600  text-yellow-600 px-8 py-4 rounded-full hover:bg-yellow-700 transition flex items-center justify-center">
+          <button className="bg-yellow-600 text-white px-8 py-4 rounded-full hover:bg-yellow-700 transition flex items-center justify-center">
             Join the Hive
             <ArrowRight className="ml-2 h-5 w-5" />
           </button>
