@@ -22,7 +22,7 @@ const Navbar = () => {
 
           
           <Link to="/login">
-            <button className="bg-auto text-blue-600 px-6 py-2 rounded-full hover:bg-yellow-700 transition">
+          <button className="!bg-yellow-600 text-white px-8 py-4 rounded-full hover:!bg-yellow-700 transition flex items-center justify-center">
               Sign in
             </button>
           </Link>

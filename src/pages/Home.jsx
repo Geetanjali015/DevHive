@@ -9,14 +9,14 @@ import Footer from '../components/Footer';
 
 const LandingPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-yellow-50 to-white">
-      {/* Navigation */}
+<div className="min-h-screen w-full bg-gradient-to-b from-yellow-50 to-white">
+{/* Navigation */}
       {/* <Navbar/> */}
 
 
       {/* Hero Section */}
-      <div className="container mx-auto px-6 py-16 text-center">
-        <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-8">
+      <div className="w-full px-6 py-16 text-center">
+      <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-8">
           Join Our
           <span className="text-yellow-600"> Developer Hive</span>
         </h1>
@@ -24,16 +24,18 @@ const LandingPage = () => {
           Buzz with activity! Connect with developers who share your passion and collaborate 
           on projects that make an impact.
         </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
+        <div className="flex flex-col sm:flex-row justify-center gap-4 w-full">
+
         <Link to="/login">
-          <button className="bg-yellow-600 text-yellow-600 px-8 py-4 rounded-full hover:bg-yellow-700 transition flex items-center justify-center">
-            Join the Hive
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </button>
+        <button className="!bg-yellow-600 text-white px-8 py-4 rounded-full hover:!bg-yellow-700 transition flex items-center justify-center">
+  Join the Hive
+  <ArrowRight className="ml-2 h-5 w-5" />
+</button>
+
+
           </Link>
           <Link to="/about">
-          <button className="bg-white text-yellow-600 px-8 py-4 rounded-full border-2 border-yellow-600 hover:bg-yellow-50 transition">
-            Learn More
+          <button className="!bg-yellow-600 text-white px-8 py-4 rounded-full hover:!bg-yellow-700 transition flex items-center justify-center">            Learn More
           </button>
           </Link>
         </div>
@@ -104,7 +106,7 @@ const LandingPage = () => {
             Join thousands of developers who are already buzzing with creativity and innovation.
           </p>
           <Link to="/login">
-          <button className="bg-white text-yellow-600 px-8 py-4 rounded-full hover:bg-yellow-50 transition flex items-center mx-auto">
+          <button className="!bg-white text-yellow-600 px-8 py-4 rounded-full hover:bg-yellow-50 transition flex items-center mx-auto">
             Start Building Now
             <ArrowRight className="ml-2 h-5 w-5" />
           </button>
