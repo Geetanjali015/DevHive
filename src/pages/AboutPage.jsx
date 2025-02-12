@@ -1,26 +1,13 @@
 import React from 'react';
 import { Hexagon, Github, Users, Code, Trophy, ArrowRight } from 'lucide-react';
+import Navbar from '../components/Navbar';
 
 const AboutPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-yellow-50 to-white">
       {/* Navigation - Same as Landing Page */}
-      <nav className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center">
-            <Hexagon className="h-8 w-8 text-yellow-600" />
-            <span className="ml-2 text-xl font-bold text-gray-800">DevHive</span>
-          </div>
-          <div className="hidden md:flex items-center space-x-8">
-            <a href="#" className="text-gray-600 hover:text-yellow-600">Features</a>
-            <a href="#" className="text-gray-600 hover:text-yellow-600">How it works</a>
-            <a href="#" className="text-yellow-600">About</a>
-            <button className="bg-yellow-600 text-white px-6 py-2 rounded-full hover:bg-yellow-700 transition">
-              Sign Up
-            </button>
-          </div>
-        </div>
-      </nav>
+      {/* <nav className="container mx-auto px-6 py-4"> */}
+      {/* <Navbar/> */}
 
       {/* Hero Section */}
       <div className="container mx-auto px-6 py-16">
@@ -84,7 +71,7 @@ const AboutPage = () => {
       </div>
 
       {/* Footer - Same as Landing Page */}
-      <footer className="bg-gray-50 py-12">
+      {/* <footer className="bg-gray-50 py-12">
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
@@ -98,7 +85,7 @@ const AboutPage = () => {
             </div>
           </div>
         </div>
-      </footer>
+      </footer> */}
     </div>
   );
 };

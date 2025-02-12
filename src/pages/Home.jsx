@@ -1,29 +1,18 @@
 import React from 'react';
 import { ArrowRight, Hexagon, Users, Phone, MessageSquare, Github } from 'lucide-react';
 import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import Footer from '../components/Footer';
+
+
 
 
 const LandingPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-yellow-50 to-white">
       {/* Navigation */}
-      <nav className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center">
-            <Hexagon className="h-8 w-8 text-yellow-600" />
-            <span className="ml-2 text-xl font-bold text-gray-800">DevHive</span>
-          </div>
-          <div className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-gray-600 hover:text-yellow-600">Features</a>
-            <a href="#how-it-works" className="text-gray-600 hover:text-yellow-600">How it works</a>
-            {/* <a href="#" className="text-gray-600 hover:text-yellow-600">About</a> */}
-            <Link to="/about" className="text-gray-600 hover:text-yellow-600">About</Link>
-            <button className="bg-yellow-600 text-white px-6 py-2 rounded-full hover:bg-yellow-700 transition">
-              Sign Up
-            </button>
-          </div>
-        </div>
-      </nav>
+      {/* <Navbar/> */}
+
 
       {/* Hero Section */}
       <div className="container mx-auto px-6 py-16 text-center">
@@ -36,13 +25,17 @@ const LandingPage = () => {
           on projects that make an impact.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <button className="bg-yellow-600 text-white px-8 py-4 rounded-full hover:bg-yellow-700 transition flex items-center justify-center">
+        <Link to="/login">
+          <button className="bg-yellow-600 text-yellow-600 px-8 py-4 rounded-full hover:bg-yellow-700 transition flex items-center justify-center">
             Join the Hive
             <ArrowRight className="ml-2 h-5 w-5" />
           </button>
+          </Link>
+          <Link to="/about">
           <button className="bg-white text-yellow-600 px-8 py-4 rounded-full border-2 border-yellow-600 hover:bg-yellow-50 transition">
             Learn More
           </button>
+          </Link>
         </div>
       </div>
 
@@ -110,15 +103,17 @@ const LandingPage = () => {
           <p className="text-yellow-100 mb-8 max-w-2xl mx-auto">
             Join thousands of developers who are already buzzing with creativity and innovation.
           </p>
+          <Link to="/login">
           <button className="bg-white text-yellow-600 px-8 py-4 rounded-full hover:bg-yellow-50 transition flex items-center mx-auto">
             Start Building Now
             <ArrowRight className="ml-2 h-5 w-5" />
           </button>
+          </Link>
         </div>
       </div>
 
       {/* Footer */}
-      <footer className="bg-gray-50 py-12">
+      {/* <footer className="bg-gray-50 py-12">
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
@@ -132,7 +127,7 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-      </footer>
+      </footer> */}
     </div>
   );
 };
