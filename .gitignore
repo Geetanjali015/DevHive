@@ -25,3 +25,30 @@ dist-ssr/
 *.njsproj
 *.sln
 *.sw?
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+
+# Django-specific
+*.log
+db.sqlite3
+media/
+staticfiles/
+local_settings.py
+
+# Environment variables
+.env
+
+# IDE and editor files
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Migrations (optional, if auto-generated)
+*/migrations/*.py
+*/migrations/*.pyc
