@@ -13,7 +13,7 @@ const LandingPage = () => {
 {/* Navigation */}
       {/* <Navbar/> */}
 
-
+      <Navbar />
       {/* Hero Section */}
       <div className="w-full px-6 py-16 text-center">
       <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-8">

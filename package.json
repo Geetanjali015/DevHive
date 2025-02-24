@@ -10,11 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.0.6",
-    "lucide-react": "^0.475.0",
+    "@tailwindcss/postcss7-compat": "^2.2.17",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router-dom": "^7.1.5"
+    "react-router-dom": "^7.1.5",
+    "serialize-javascript": "^6.0.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",

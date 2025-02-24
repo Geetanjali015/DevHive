@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';  // Import useNavigate
+import { Link, useNavigate } from 'react-router-dom';
 import { Hexagon, Github, UserPlus } from 'lucide-react';
 
 const SignUp = () => {
@@ -7,41 +7,37 @@ const SignUp = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
-    const navigate = useNavigate();  // Initialize useNavigate hook
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setError("");  // Reset any previous errors
-
-        const userData = {
-            full_name: fullName,
+    
+        const formData = {
+            full_name: fullName,  // ✅ Using state value
             email: email,
-            password: password,
+            password: password
         };
 
         try {
             const response = await fetch("http://127.0.0.1:8000/api/auth/signup/", {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json",
+                    "Content-Type": "application/json"
                 },
-                body: JSON.stringify(userData),
+                body: JSON.stringify(formData)
             });
 
             const data = await response.json();
-
+            
             if (response.ok) {
-                alert("Signup successful! Token: " + data.token);
-                setFullName("");
-                setEmail("");
-                setPassword("");
-                navigate('/signin');  // Use navigate instead of useHistory to redirect to sign-in page
+                console.log("User Registered:", data);
+                navigate('/signin');  // ✅ Redirect after successful signup
             } else {
-                setError(data.error || "Signup failed!");
+                setError(data.error || "Something went wrong");  // ✅ Show API error
             }
-        } catch (err) {
-            setError("Network error, please try again!");
-            console.error('Error:', err);
+        } catch (error) {
+            setError("Network error. Please try again.");
+            console.error("Network Error:", error);
         }
     };
 

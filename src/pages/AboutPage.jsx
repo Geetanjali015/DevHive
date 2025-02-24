@@ -8,6 +8,7 @@ const AboutPage = () => {
       {/* Navigation - Same as Landing Page */}
       {/* <nav className="container mx-auto px-6 py-4"> */}
       {/* <Navbar/> */}
+      <Navbar />
 
       {/* Hero Section */}
       <div className="container mx-auto px-6 py-16">
