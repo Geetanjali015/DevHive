@@ -7,6 +7,8 @@ const ResumeColumn = () => {
     { id: 2, name: 'Frontend_Specialist_CV.pdf', date: 'Jan 22, 2025', isDefault: false, size: '0.8 MB' }
   ]);
   const [isDragging, setIsDragging] = useState(false);
+  const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleDragEnter = (e) => {
     e.preventDefault();
@@ -29,42 +31,41 @@ const ResumeColumn = () => {
     await uploadFile(file);
   };
 
-  
+  const uploadFile = async (file) => {
+    const token = localStorage.getItem('token'); // Assuming the token is stored in localStorage
 
-    const uploadFile = async (file) => {
-        const formData = new FormData();
-        formData.append('resume', file);
-        const token = localStorage.getItem('token');
-        console.log('Token',token)
+    const formData = new FormData();
+    formData.append("file", file);
 
-        if (!token) {
-            console.error('No authentication token found');
-            return;
-          }
-        try {
-          const response = await fetch('http://127.0.0.1:8000/api/auth/resumes/upload/', {
-            method: 'POST',
-            body: formData,
+    try {
+        const response = await fetch("http://127.0.0.1:8000/api/auth/resumes/upload/", {
+            method: "POST",
             headers: {
-                'Authorization': `Bearer ${token}`
-              }
-          });
-    
-          if (response.ok) {
+                "Authorization": `Token ${token}`, // Add the token here
+            },
+            body: formData,
+        });
+
+        if (response.ok) {
             const data = await response.json();
-            setResumes([...resumes, data]);
-          } else {
-            console.error('Failed to upload resume');
-          }
-        } catch (error) {
-          console.error('Error:', error);
+            setMessage("File uploaded successfully");
+            console.log("File uploaded successfully", data);
+            setResumes([...resumes, {
+                id: data.resume.id,
+                name: data.resume.name,
+                date: new Date(data.resume.uploaded_at).toLocaleDateString(),
+                isDefault: data.resume.is_default,
+                size: (data.resume.size / (1024 * 1024)).toFixed(2) + ' MB'
+            }]);
+        } else {
+            const errorData = await response.json();
+            setError(errorData.error || "Failed to upload file");
+            console.error("Failed to upload file:", errorData);
         }
-      };
-  const handleSetDefault = (id) => {
-    setResumes(resumes.map(resume => ({
-      ...resume,
-      isDefault: resume.id === id
-    })));
+    } catch (error) {
+        setError("Error uploading file. Please try again.");
+        console.error("Error uploading file:", error);
+    }
   };
 
   const handleDelete = (id) => {

@@ -1,0 +1,12 @@
+{
+    "intents": [
+        {
+            "patterns": ["Who are you?", "Tell me about yourself"],
+            "responses": ["Hi, I am your friend. I am here to help you."]
+        },
+        {
+            "patterns": ["What can you do?", "What are your features?"],
+            "responses": ["I can guide you with our platform and answer queries."]
+        }
+    ]
+}

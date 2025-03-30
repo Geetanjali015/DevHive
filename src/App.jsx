@@ -8,6 +8,8 @@ import SignUp from "./pages/Signup";
 import ProfilePage from "./pages/ProfilePage";
 import ResumeColumn from "./pages/Resume";
 import DevHiveMatch from "./pages/DevHiveMatch";
+import HiveHelper from "./pages/HiveHelper";
+
 
 
 const App = () => {
@@ -25,6 +27,8 @@ const App = () => {
           <Route path="profile" element={<ProfilePage />} />
           <Route path="resume" element={<ResumeColumn />} />
           <Route path="matchES" element={<DevHiveMatch />} />
+          <Route path="hiveHelper" element={<HiveHelper />} />
+         
         </Route>
       </Routes>
     </Router>
